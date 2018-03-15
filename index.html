@@ -1,0 +1,41 @@
+<html>
+
+<head>
+  <title>JS to JSON</title>
+  <script>
+    function convert() {
+      const source = document.getElementById("sourcejs");
+      const obj = eval("(" + source.value + ")");
+      const dest = document.getElementById("destjson");
+      dest.value = JSON.stringify(obj, null, "\t");
+    }
+  </script>
+  <style>
+    textarea {
+      width: 100%;
+      height: 500px;
+    }
+  </style>
+</head>
+
+<body>
+  <table width="100%">
+    <tr>
+      <td>
+        Source JS object
+        <textarea id="sourcejs"></textarea>
+      </td>
+      <td>
+        Destination JSON
+        <textarea id="destjson"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><button onclick="convert()">Convert</button></td>
+    </tr>
+  </table>
+
+
+</body>
+
+</html>
